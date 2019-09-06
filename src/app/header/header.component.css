@@ -1,0 +1,22 @@
+#from{
+    padding-left:200px;
+    
+}
+
+.form-inline
+{
+    text-align: center;
+}
+#nav{
+    background-color: #191a19;
+}
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+    font-size: 30px;
+}
+#nava{
+    margin-right:30px;
+    padding-right:none;
+    
+}

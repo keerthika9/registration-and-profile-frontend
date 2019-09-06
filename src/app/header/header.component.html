@@ -1,0 +1,45 @@
+<nav id="nav" class="navbar navbar-expand-lg font-weight-bold  bg-dark fixed-top">
+  <a class="navbar-brand" [routerLink]="['/']">WRW</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Category
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">Movie</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="routeToDomain('Restaurant')">Restaurant</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button mdbBtn type="button" color="primary" outline="true" mdbWavesEffect type="submit">Add An Entity</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+      <button mdbBtn type="button" class="btn btn-info font-weight-bold" outline="true" mdbWavesEffect type="submit">
+        Search</button>
+
+      <button mdbBtn type="button" class="btn btn-success font-weight-bold" outline="true" mdbWavesEffect type="submit"
+        [routerLink]="['/login']" routerLinkActive="active" (click)=onClick() *ngIf="!isUserLoggedIn">Login</button>
+      <fa-icon [icon]="fa-bell" *ngIf="isUserLoggedIn"></fa-icon>
+      <li id="nava" class="nav-item dropdown">
+      <button class=" btn btn-primary dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"   *ngIf="isUserLoggedIn">
+          Profile
+
+      </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)=profile()>My account</a>
+          <a class="dropdown-item" href="/">Log out</a>
+        </div>
+      </li>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,51 @@
+<app-header [isUserLoggedIn]='isUserLoggedIn'></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-4" >
+            <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+        </div>
+        <div class="col-7">
+            <div class="row">
+                <mdb-card-title>
+                    <h4>{{card.title}}</h4>
+                </mdb-card-title>
+            </div>
+            <div class="row">
+                <p>{{card.description}}</p><br>
+                <b>
+                    <ngb-rating [rate]="card.rate"></ngb-rating>
+                </b>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"><br>
+        <h4>Reviews</h4>
+    </div><br>
+    <div class="row">
+        <div class="d-block col-12">
+            <ul>
+                <li *ngFor="let review of card.reviews">
+
+                    <div class="row" *ngFor="let revie of review.review">
+                        <ul>
+                            <li>Title: {{revie.title}}</li>
+                            <li>Description: {{revie.Description}}</li>
+                            <li>Reviewed: {{revie.reviewedBy}}</li>
+                            <li>Time: {{revie.timestamp}}</li>
+                            <li>
+                                <fa-icon [icon]="faThumbsUp"></fa-icon> {{revie.upVote}}
+                            </li>
+                            <li>
+                                <fa-icon [icon]="faThumbsDown"></fa-icon> {{revie.downVote}}
+                            </li>
+                            <li>
+                                <b><ngb-rating [rate]="revie.rate"></ngb-rating></b>
+                            </li><hr>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

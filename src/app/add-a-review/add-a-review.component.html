@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<app-header></app-header>
+
+<html lang="en">
+   
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+   
+
+    <!-- Bootstrap CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> -->
+
+    <title>Hello, world!</title>
+  </head>
+  <body>    <div class="container">
+      <!-- Header Row -->
+      <section class="row border" id="header">
+        <div class="col">
+          Add
+        </div>
+        <div class="col">
+          Review
+        </div>
+      </section>
+
+      <!-- Product Section -->
+      <section class="row pt-5 border" id="product-section">
+        <section class="col">
+          <!-- TODO Change the image -->
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Placeholder image"
+            class="rounded d-block"
+          />
+          <ngb-rating [rate]="3"></ngb-rating>
+        </section>
+        <!-- Product Description -->
+        <section class="col">
+          <h5>
+            Description
+          </h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            similique aliquam consequuntur maxime debitis repudiandae. Ipsum
+            aliquam necessitatibus labore qui culpa fugiat accusantium eius
+            ratione. Alias ipsum veniam necessitatibus perferendis.
+          </p>
+        </section>
+      </section>
+      <!-- Review Form -->
+      <section class="row pt-5">
+        <div class="col">
+          <!-- Review Submit form -->
+        
+        <form >
+            <div class="form-group">
+              <label>Review Title</label>
+              <textarea
+              class="form-control"
+              id="reviewTitleTextArea"
+              rows="3"
+              [(ngModel)]="reviewTitle"
+              name="reviewTitle"
+            ></textarea>
+              <label for="reviewTextArea">Review</label>
+              <textarea
+                class="form-control"
+                id="reviewTextArea"
+                rows="7"
+                [(ngModel)]="reviewText"
+                name="review"
+              ></textarea>
+            </div>
+            <button (click)="saveReview()" class="btn btn-primary" routerLinkActive="router-link-active">Submit</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+
+  
+  </body>
+  <app-footer></app-footer>
+</html>

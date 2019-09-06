@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<mat-horizontal-stepper  id="step" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup" [routerLink]="step1">
+    <form [formGroup]="firstFormGroup"  id="steps">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <input  type="text" matInput placeholder="First name" [(ngModel)]=user.firstName formControlName="FirstName" required><hr>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Last name" [(ngModel)]=user.lastName formControlName="LastName" required><hr>
+      </mat-form-field>
+      <div>
+        <button class="btn aqua-gradient" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [routerLink]="step2">
+    <form [formGroup]="secondFormGroup" id="steps">
+      <ng-template matStepLabel>Fill out your Email address</ng-template>
+      <mat-form-field>
+        <input matInput type="email" placeholder="Email" [(ngModel)]=user.emailId formControlName="EmailId" required><hr>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="password" placeholder="password" [(ngModel)]=user.password formControlName="password" required><hr>
+      </mat-form-field>
+      <div>
+        <button class="btn peach-gradient" mat-button matStepperPrevious>Back</button>
+        <button  class="btn aqua-gradient" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="ThirdFormGroup" [routerLink]="step3">
+    <form [formGroup]=" ThirdFormGroup" id="steps">
+      <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Mobile"  [(ngModel)]=user.mobileNumber formControlName="mobile" required><hr>
+      </mat-form-field><br>
+      <div>
+        <button class="btn peach-gradient" mat-button matStepperPrevious>Back</button>
+        <!-- <button  class="btn aqua-gradient" mat-button matStepperNext>Next</button> -->
+        <button  class="btn purple-gradient" mat-button (click)="onSubmit()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- <mat-step  [routerLink]="step4">
+    <ng-template matStepLabel>Done</ng-template>
+    <h5 id="steps">You are now done.</h5>
+    <div id="steps">
+      <button  class="btn peach-gradient" mat-button matStepperPrevious>Back</button>
+      <button  class="btn purple-gradient" mat-button (click)="onSubmit()">Submit</button>
+    </div>
+  </mat-step> -->
+</mat-horizontal-stepper>
+ <app-footer></app-footer>

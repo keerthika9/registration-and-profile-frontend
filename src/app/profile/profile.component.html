@@ -1,0 +1,169 @@
+ <app-header [isUserLoggedIn]='isUserLoggedIn'></app-header> 
+
+<div class="profileParent" >
+  <div class="container emp-profile">
+    <form method="post">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+              alt="" />
+            <div class="file btn btn-lg btn-primary">
+              Change Photo
+              <input type="file" name="file" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              <button [routerLink]="[ '/profile' ]" routerLinkActive="active" >My profile</button>
+            </h5>
+            
+            <button type="button" class="btn btn-primary" style="position: absolute; right: 10%; margin-top: 40px;" data-toggle="modal" data-target="#form">
+              Edit Profile
+             </button>
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-work">
+
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label>First Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.firstName}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Last Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.lastName}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email Id</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.emailId}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>My Reviews</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.myReviews}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>My Entities</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.myEntities}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>User Score</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.userScore}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Mobile Number</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userServices?.mobileNumber}}</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  
+
+
+
+
+  
+  </div>
+  <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+          <button type="button"  #closebutton class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email" >EmailId</label>
+              <input type="email" class="form-control" name="emailId" aria-describedby="emailHelp" [(ngModel)]="userServices.emailId"  readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="name">FirstName</label>
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="userServices.firstName">
+              </div>
+            <div class="form-group">
+              <label for="number">Mobile Number</label>
+              <input type="text" class="form-control" name="mobileNumber" [(ngModel)]="userServices.mobileNumber">
+            </div>
+            <div class="form-group">
+              <label for="LastName">LastName</label>
+              <input type="text" class="form-control" name="lastname" [(ngModel)]="userServices.lastName" >
+            </div>
+             <div class="form-group">
+              <label for="MyReviews">MyReviews</label>
+              <input type="text" class="form-control" name="myReviews" [(ngModel)]="userServices.myReviews" readonly="readonly">
+            </div>
+              <div class="form-group">
+                <label for="MyEntities">MyEntities</label>
+                <input type="text" class="form-control" name="myEntities" [(ngModel)]="userServices.myEntities" readonly="readonly">
+              </div>
+              <div class="form-group">
+                <label for="UserScore">UserScore</label>
+                <input type="text" class="form-control" name="userScore" [(ngModel)]="userServices.userScore" readonly="readonly">
+              </div>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" (click)="onSubmitUpdate()">Submit</button>
+          </div>
+          <!-- </div> -->
+    <!-- </div>
+  </div>
+  </div> -->
+  
+  
+  <!-- <app-footer></app-footer> -->
+  

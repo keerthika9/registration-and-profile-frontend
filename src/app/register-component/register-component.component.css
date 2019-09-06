@@ -1,0 +1,14 @@
+#step   
+{
+    margin-top:70px;
+    padding-top:40px;
+    background-image: url('/assets/images/bg.jpg');
+    font-family: serif;
+    overflow-y: auto;
+    height: 700px;
+    
+}
+#steps{
+  text-align: center;
+}
+
